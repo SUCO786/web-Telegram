@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajes por Telegram</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <header class="encabezado">
+      <div class="icono-telegram">➤</div>
+      <h1>Mensajes por Telegram</h1>
+      <p>Administra destinatarios y envía tus mensajes fácilmente.</p>
+    </header>
+
+    <section class="tarjeta">
+      <h2>⚙️ Configuración del bot</h2>
+      <label for="token">Token del bot de Telegram</label>
+      <input
+        type="password"
+        id="token"
+        placeholder="Pega aquí el token de BotFather"
+        autocomplete="off"
+      >
+      <small>No compartas tu token con otras personas.</small>
+    </section>
+
+    <section class="tarjeta">
+      <h2>👥 Guardar destinatarios</h2>
+
+      <label for="nombreDestinatario">Nombre del destinatario</label>
+      <input
+        type="text"
+        id="nombreDestinatario"
+        placeholder="Ej. Licenciado Carlos"
+      >
+
+      <label for="chatIdDestinatario">Chat ID del destinatario</label>
+      <input
+        type="text"
+        id="chatIdDestinatario"
+        placeholder="Ej. 123456789"
+      >
+
+      <button type="button" id="guardarDestinatario" class="boton secundario">
+        Guardar destinatario
+      </button>
+
+      <div id="listaDestinatarios" class="lista-destinatarios">
+        <p class="vacio">Todavía no hay destinatarios guardados.</p>
+      </div>
+
+      <p class="nota">
+        Los destinatarios se guardan en este navegador. No se comparten
+        automáticamente con otras computadoras.
+      </p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>💬 Escribir mensaje</h2>
+
+      <label for="destinatarioSelect">Seleccionar destinatario guardado</label>
+      <select id="destinatarioSelect">
+        <option value="">Selecciona un destinatario</option>
+      </select>
+
+      <label for="chatId">Chat ID seleccionado</label>
+      <input
+        type="text"
+        id="chatId"
+        placeholder="Selecciona un destinatario o escribe un Chat ID"
+      >
+
+      <label for="mensaje"> 💬 Mensaje:</label>
+      <textarea
+        id="mensaje"
+        rows="6"
+        maxlength="4000"
+        placeholder="Escribe aquí tu mensaje..."
+      ></textarea>
+
+      <div class="informacion">
+        <span id="contador">0 / 4000 caracteres</span>
+        <span id="estado" role="status" aria-live="polite">Listo para enviar.</span>
+      </div>
+
+      <div class="botones">
+        <button type="button" id="enviar" class="boton principal">
+          ➤ Enviar mensaje
+        </button>
+        <button type="button" id="limpiar" class="boton borrar">
+          Limpiar
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <p>Proyecto educativo · Integración con Telegram Bot API</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
